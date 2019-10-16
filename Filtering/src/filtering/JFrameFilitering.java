@@ -7,6 +7,7 @@
 package filtering;
 import StringManipulation.FilterHTML;
 import StringManipulation.WordCount;
+import java.util.HashMap;
 /**
  *
  * @author pallerma_sd2082
@@ -127,8 +128,8 @@ public class JFrameFilitering extends javax.swing.JFrame {
         // TODO add your handling code here:
         String str = jTextAreaFiltered.getText();
         WordCount w = new WordCount();
-        str = w.wordCount(str);
-        jTextAreaCountedWords.setText(str);
+        HashMap<String,Integer> a = w.wordCount(str);
+        jTextAreaCountedWords.setText(a.toString());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
