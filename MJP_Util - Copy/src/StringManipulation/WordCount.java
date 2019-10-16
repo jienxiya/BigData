@@ -5,10 +5,6 @@
  */
 package StringManipulation;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -56,35 +52,9 @@ public class WordCount {
         for (int i = 0; i < words.length; i++) {
             if (words[i] != "") {
                 list.add(words[i] + " = " + frequency[i] + "\n");
-                this.InsertData(words[i], frequency[i], "USC");
             }
-            
         }
         return list.toString();
-        
-        
     }
 
-    public void InsertData(String word, int count,String school){
-        
-        final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-        final String DB_URL = "jdbc:mysql://localhost/dbwordCounter";
-        final String USER = "root";
-        final String PASS = "";
-        Connection conn = null;
-        Statement stmt = null;
-        String insertQuery; 
-
-        insertQuery = String.format("INSERT INTO `tblCounter` (word,count,school) " + "VALUES ('%s','%d','%s')", word, count,school);
-        try {
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement();
-            int result = stmt.executeUpdate(insertQuery);
-            System.out.println(result);
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-    }
-    
 }

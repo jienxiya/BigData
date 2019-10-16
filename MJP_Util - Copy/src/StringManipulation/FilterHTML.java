@@ -15,6 +15,4 @@ public class FilterHTML {
       str = str.replaceAll("\\<.*?\\>", "");
       return str;
     }
-    
-    
 }
