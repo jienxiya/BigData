@@ -22,76 +22,76 @@ import java.util.logging.Logger;
  */
 public class WordCount {
 
-//    public String wordCount(String str) {
-//
-//        // split text to array of words
-//        String[] words = str.split(" ");
-//
-//        // frequency array
-//        int[] frequency = new int[words.length];
-//
-//        // init frequency array
-//        for (int i = 0; i < frequency.length; i++) {
-//            frequency[i] = 0;
-//        }
-//
-//        // count words frequency
-//        for (int i = 0; i < words.length; i++) {
-//            for (int j = 0; j < words.length; j++) {
-//                if (words[i].equals(words[j])) {
-//                    frequency[i]++;
-//                }
-//            }
-//        }
-//
-//        // clean duplicates
-//        for (int i = 0; i < words.length; i++) {
-//            for (int j = 0; j < words.length; j++) {
-//                if (words[i].equals(words[j])) {
-//                    if (i != j) {
-//                        words[i] = "";
-//                    }
-//                }
-//            }
-//        }
-//
-//        // show the output
-//        int total = 0;
-//        ArrayList<String> list = new ArrayList<>();
-//        for (int i = 0; i < words.length; i++) {
-//            if (words[i] != "") {
-//                list.add(words[i] + " = " + frequency[i] + "\n");
-//                this.InsertData(words[i], frequency[i], "USC");
-//            }
-//            
-//        }
-//        return list.toString();
-//        
-//        
-//    }
-    
-    public HashMap<String, Integer> wordCount(String words) {
-//        Create insert = new Create();
-        String[] list = words.trim().split("\\s+");
-        HashSet<String> mySet = new HashSet<>(Arrays.asList(list));
-        HashMap<String, Integer> countWords = new HashMap<>();
-        for (String unique_string : mySet) {
-            int counter = 0;
-            for (String test_string : list) {
-                if (unique_string.equals(test_string)) {
-                    ++counter;
+    public String wordCount(String str) {
+
+        // split text to array of words
+        String[] words = str.split(" ");
+
+        // frequency array
+        int[] frequency = new int[words.length];
+
+        // init frequency array
+        for (int i = 0; i < frequency.length; i++) {
+            frequency[i] = 0;
+        }
+
+        // count words frequency
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                if (words[i].equals(words[j])) {
+                    frequency[i]++;
                 }
             }
-            countWords.put(unique_string, counter);
-            this.InsertData(unique_string, counter, "Usc");
         }
-        return countWords;
+
+        // clean duplicates
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                if (words[i].equals(words[j])) {
+                    if (i != j) {
+                        words[i] = "";
+                    }
+                }
+            }
+        }
+
+        // show the output
+        int total = 0;
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < words.length; i++) {
+            if (words[i] != "") {
+                list.add(words[i] + " = " + frequency[i] + "\n");
+                this.InsertData(words[i], frequency[i], "USC");
+            }
+            
+        }
+        return list.toString();
+        
+        
     }
+    
+//    public HashMap<String, Integer> wordCount(String words) {
+////        Create insert = new Create();
+//        String[] list = words.trim().split("\\s+");
+//        HashSet<String> mySet = new HashSet<>(Arrays.asList(list));
+//        HashMap<String, Integer> countWords = new HashMap<>();
+//        for (String unique_string : mySet) {
+//            int counter = 0;
+//            for (String test_string : list) {
+//                if (unique_string.equals(test_string)) {
+//                    ++counter;
+//                }
+//            }
+//            countWords.put(unique_string, counter);
+//            this.InsertData(unique_string, counter, "Usc");
+//        }
+//        return countWords;
+//    }
 
     public void InsertData(String word, int count,String school){
         
         final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-        final String DB_URL = "jdbc:mysql://localhost/dbwordcounter";
+        final String DB_URL = "jdbc:mysql://localhost/dbwordcount";
         final String USER = "root";
         final String PASS = "";
         Connection conn = null;
