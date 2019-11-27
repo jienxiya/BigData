@@ -61,7 +61,7 @@ public class WordCount {
         for (int i = 0; i < words.length; i++) {
             if (words[i] != "") {
                 list.add(words[i] + " = " + frequency[i] + "\n");
-                this.InsertData(words[i], frequency[i], "USC");
+                this.InsertData(words[i], frequency[i], "UC");
             }
             
         }
