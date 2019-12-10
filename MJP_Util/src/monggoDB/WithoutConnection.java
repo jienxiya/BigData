@@ -55,10 +55,6 @@ public class WithoutConnection {
     }
 
     public void delete() {
-//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-//        Date date = new Date();
-//        System.out.println("Time started: " + formatter.format(date));
-//        Instant fore = Instant.now();
         LocalTime timeStart = LocalTime.now();
         System.out.println("Time Sarted: " + timeStart);
 
@@ -71,12 +67,6 @@ public class WithoutConnection {
         LocalTime timeFinish = null;
 
         try {
-//            Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
-//            mongoLogger.setLevel(Level.SEVERE);
-//            MongoClient mongoClient = new MongoClient("localhost", 27017);
-//            DB db = mongoClient.getDB("test");
-//            System.out.println("Connected to database!");
-//            DBCollection collection = db.getCollection("sqltesting");
 
             for (int i = 1; i < 1001; i++) {
                 if (i == 1000) {
@@ -93,9 +83,5 @@ public class WithoutConnection {
         }
         long timeInterval = ChronoUnit.MILLIS.between(timeStart, timeFinish);
         System.out.println("Diffrence between time in milliseconds : " + timeInterval);
-//        Instant ter = Instant.now();
-//        Date date1 = new Date();
-//        Duration duration = Duration.between(fore, ter);
-//        System.out.println("Time ended: " + formatter.format(date1)+"\n"+"Duration: " + duration.getSeconds() + " second/s");
     }
 }

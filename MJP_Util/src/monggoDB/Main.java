@@ -14,9 +14,10 @@ public class Main {
     public static void main(String args[]) {
         WithoutConnection wayKoneksyon = new WithoutConnection();
 //        wayKoneksyon.insertNumbers();
+//        wayKoneksyon.delete();
 
         WithConnection konek = new WithConnection();
 //        konek.insertNumbers();
-        konek.delete();
+//        konek.delete();
     }
 }
