@@ -10,9 +10,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,7 +58,7 @@ public class WordCount {
         for (int i = 0; i < words.length; i++) {
             if (words[i] != "") {
                 list.add(words[i] + " = " + frequency[i] + "\n");
-                this.InsertData(words[i], frequency[i], "UC");
+                this.InsertData(words[i], frequency[i], "USC");
             }
             
         }

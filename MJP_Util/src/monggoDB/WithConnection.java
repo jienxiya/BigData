@@ -37,12 +37,12 @@ public class WithConnection {
                     MongoClient mongoClient = new MongoClient("localhost", 27017);
                     DB db = mongoClient.getDB("dbTesting");
                     DBCollection collection = db.getCollection("WithConnection");
-                    BasicDBObject add200 = new BasicDBObject("col1", i)
+                    BasicDBObject add = new BasicDBObject("col1", i)
                             .append("col2", i + 1)
                             .append("col3", i + 2)
                             .append("col4", i + 3)
                             .append("col5", i + 4);
-                    collection.insert(add200);
+                    collection.insert(add);
                     System.out.println("Inserted!");
                 }
             }
@@ -72,8 +72,8 @@ public class WithConnection {
                     DB db = mongoClient.getDB("dbTesting");
                     DBCollection collection = db.getCollection("WithConnection");
                     
-                    BasicDBObject remove1000 = new BasicDBObject("col1", i);
-                    collection.remove(remove1000);
+                    BasicDBObject delete = new BasicDBObject("col1", i);
+                    collection.remove(delete);
                     System.out.println("Suuccessfully deleted!");
                 }
             }

@@ -15,6 +15,8 @@ public class Main {
         WithoutConnection wayKoneksyon = new WithoutConnection();
 //        wayKoneksyon.insertNumbers();
 //        wayKoneksyon.delete();
+        wayKoneksyon.getAVGPerColumn();
+//        wayKoneksyon.getAVGInternalFunction();
 
         WithConnection konek = new WithConnection();
 //        konek.insertNumbers();

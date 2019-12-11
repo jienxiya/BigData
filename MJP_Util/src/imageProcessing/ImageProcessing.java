@@ -14,7 +14,7 @@ public class ImageProcessing {
     public ImageProcessing() {
 
         try {
-            File input = new File("C:\\Users\\pallerma_sd2082\\Downloads\\flower..jpg");
+            File input = new File("C:\\Users\\pallerma_sd2082\\Downloads\\flower.jpg");
             image = ImageIO.read(input);
             width = image.getWidth();
             height = image.getHeight();
@@ -41,6 +41,6 @@ public class ImageProcessing {
     }
 
     static public void main(String args[]) throws Exception {
-        ImageProcessing obj = new ImageProcessing();
+    ImageProcessing obj = new ImageProcessing();
     }
 }
