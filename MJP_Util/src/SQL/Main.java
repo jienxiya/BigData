@@ -22,8 +22,8 @@ public class Main {
         WithoutConnection walayKoneksyon = new WithoutConnection();
 //        walayKoneksyon.insertNumbers();
 //        walayKoneksyon.delete();
-        walayKoneksyon.getAverageWithoutConnection();
-//        walayKoneksyon.getAverageWithInternalFunction();
+//        walayKoneksyon.getAverageWithoutConnection();
+        walayKoneksyon.getAverageWithInternalFunction();
     }
     
 }
